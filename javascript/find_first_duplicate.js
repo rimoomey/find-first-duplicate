@@ -1,9 +1,21 @@
 function findFirstDuplicate(arr) {
-  // type your code here
+  let arrNoDuplicates = [];
+
+  for (num of arr) {
+    let isDuplicate = arrNoDuplicates.indexOf(num);
+
+    if (isDuplicate === -1) {
+      arrNoDuplicates.push(num);
+    } else {
+      return num;
+    }
+  }
+  return -1;
 }
 
 if (require.main === module) {
   // add your own tests in here
+
   console.log("Expecting: 3");
   console.log("=>", findFirstDuplicate([2, 1, 3, 3, 2]));
 
